@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     var isPartialResult = false
     
     let digitArr = String(0,1,2,3,4,5,6,7,8,9)
-    let operArr = String()
+    let operArr = String("+","-","x","÷","√","Rand","ln","±","=","AC","e","π","%")
     
     // swift function, -> means return, arg: type
     @IBAction func touchDigit(sender: UIButton) {
@@ -73,8 +73,15 @@ class ViewController: UIViewController {
     @IBAction func performOperation(sender: UIButton) {
         userIsInTheMiddleOfTyping = false
         if let mathematicalSymbol = sender.currentTitle {
-            if mathematicalSymbol == "π" {
+            switch mathematicalSymbol {
+            case "π":
                 display.text = String(M_PI) // M_PI
+            case "e":
+                display.text = String(M_E) // M_E
+            case "Rand":
+                display.text = String(random()) // random
+            default:
+                display.text = "ERROR"
             }
         }
     }

@@ -400,7 +400,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="allClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cDy-nh-0QK"/>
-                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b3i-vJ-91I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSZ-rS-QWq">
@@ -423,8 +422,7 @@
                                     <rect key="frame" x="78" y="83" width="50" height="50"/>
                                 </variation>
                                 <connections>
-                                    <action selector="allClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yW1-Oh-s7H"/>
-                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sBB-t2-O5z"/>
+                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1h-hN-RgB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuF-mW-v6i">
@@ -447,7 +445,6 @@
                                     <rect key="frame" x="20" y="85" width="50" height="50"/>
                                 </variation>
                                 <connections>
-                                    <action selector="allClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8kE-8H-r1w"/>
                                     <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gcF-Fe-ZYg"/>
                                 </connections>
                             </button>
