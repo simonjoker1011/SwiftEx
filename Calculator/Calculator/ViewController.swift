@@ -6,20 +6,45 @@
 //  Copyright © 2016年 SimonHuang. All rights reserved.
 //
 
+
+// import a module, UIKit: all the UI components
 import UIKit
 
+// ViewController inherited from  UIViewController 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+//    // swift function, -> means return, arg: type
+//    @IBAction func touchDigit(sender: UIButton, otherArg: Int) -> Double {
+//        self.touchDigit(sender: someButton, otherArg: 5)
+//    }
+    
+    @IBOutlet weak var display: UILabel!
+
+    var userIsInTheMiddleOfTyping = false
+    
+    // swift function, -> means return, arg: type
+    @IBAction func touchDigit(sender: UIButton) {
+        let digit = sender.currentTitle!
+        
+        if userIsInTheMiddleOfTyping{
+            let textCurrentlyInDisplay = display.text!
+            display.text = textCurrentlyInDisplay + digit
+            //        display!.text = nil (optional not set)
+        }else{
+            display.text = digit
+        }
+        userIsInTheMiddleOfTyping = true
+        
+        print("touch \(digit) digit")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func performOperation(sender: UIButton) {
+        userIsInTheMiddleOfTyping = false
+        if let mathematicalSymbol = sender.currentTitle {
+            if mathematicalSymbol == "π" {
+                display.text = String(M_PI) // M_PI
+            }
+        }
     }
-
-
 }
 
