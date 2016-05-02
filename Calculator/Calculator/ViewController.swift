@@ -21,12 +21,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var display: UILabel!
 
     var userIsInTheMiddleOfTyping = false
+    var contailnDot = false
     
     // swift function, -> means return, arg: type
     @IBAction func touchDigit(sender: UIButton) {
         let digit = sender.currentTitle!
         
-        if userIsInTheMiddleOfTyping{
+        if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = display.text!
             display.text = textCurrentlyInDisplay + digit
             //        display!.text = nil (optional not set)
@@ -36,6 +37,22 @@ class ViewController: UIViewController {
         userIsInTheMiddleOfTyping = true
         
         print("touch \(digit) digit")
+    }
+    
+    @IBAction func touchDot(sender: UIButton) {
+        if contailnDot {
+            // do nothing
+        }else{
+            contailnDot = true
+            
+            touchDigit(sender)
+        }
+        
+    }
+    
+    @IBAction func allClear(sender: UIButton) {
+        display.text = "0"
+        contailnDot = false
     }
     
     @IBAction func performOperation(sender: UIButton) {
