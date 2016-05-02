@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     var userIsInTheMiddleOfTyping = false
     var contailnDot = false
     
+    let digitArr = String(0,1,2,3,4,5,6,7,8,9)
+    
     // swift function, -> means return, arg: type
     @IBAction func touchDigit(sender: UIButton) {
         let digit = sender.currentTitle!
@@ -35,7 +37,6 @@ class ViewController: UIViewController {
             display.text = digit
         }
         userIsInTheMiddleOfTyping = true
-        
         print("touch \(digit) digit")
     }
     
@@ -49,6 +50,16 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func touchOperator(sender: UIButton) {
+        let textCurrentlyInDisplay = display.text!
+        let lastDigit = textCurrentlyInDisplay.characters.last
+        if digitArr.containsString(String(lastDigit!)){
+            display.text = textCurrentlyInDisplay + sender.currentTitle!
+        }
+        print(lastDigit!)
+    }
+    
     
     @IBAction func allClear(sender: UIButton) {
         display.text = "0"
