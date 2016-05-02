@@ -22,8 +22,11 @@ class ViewController: UIViewController {
 
     var userIsInTheMiddleOfTyping = false
     var contailnDot = false
+    var desc = String()
+    var isPartialResult = false
     
     let digitArr = String(0,1,2,3,4,5,6,7,8,9)
+    let operArr = String()
     
     // swift function, -> means return, arg: type
     @IBAction func touchDigit(sender: UIButton) {
@@ -56,6 +59,7 @@ class ViewController: UIViewController {
         let lastDigit = textCurrentlyInDisplay.characters.last
         if digitArr.containsString(String(lastDigit!)){
             display.text = textCurrentlyInDisplay + sender.currentTitle!
+            contailnDot = false
         }
         print(lastDigit!)
     }
